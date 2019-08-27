@@ -1,0 +1,25 @@
+{
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+   "compilerOptions": {
+        "lib": ["es5"],        
+        "types": ["node"],      
+        "target": "ES5",       
+        "pretty": true,
+        "module": "commonjs",
+        "outDir": "./build",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "typeRoots": ["node_modules/@types"]
+        
+   }
+}

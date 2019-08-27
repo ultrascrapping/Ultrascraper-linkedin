@@ -1,0 +1,33 @@
+{
+      "timeout": 50000,
+      "reporter":"test/Utils/TestRails/build/mocha-testrail-reporter.js",
+      "reporter-options": "domain=XXXXXXXX,username=XXXXXXXXXXXXXX,password=XXXXXXXXXXXXXX,projectId=111,suiteId=11",
+      "grep": "\\[C",
+
+   "TestRails": {
+        "server": "XXXXXXXXXXXXXX",
+        "userName": "XXXXXXXXXXXXXX",
+        "passWord":  "XXXXXXXXXXXXXX",
+        "testRunId": 1,
+        "projectId": 1,
+        "suiteId": 111,
+        "sectionId": 111,
+        "useTestRails": true
+   },
+
+   "db": {
+      "server": "XXXXXXXXXXXXXX",
+      "database":"XXXXXXXXXXXXXX",
+      "username":"XXXXXXXXXXXXXX",
+      "password":"XXXXXXXXXXXXXX",
+      "port": 1111
+   },
+
+   "webAPI":{
+      "domain": "XXXXXXXXXXXXXX",
+      "port":1111,
+      "username": "XXXXXXXXXXXXXX",
+      "password": "XXXXXXXXXXXXXX"
+   }
+}
+

@@ -1,0 +1,45 @@
+<div class="header">
+    Referidos
+</div>
+<div class="scrolling content">
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div *ngIf="!isLoading && !showErrorMessage" class="description">
+        <div class="ui section">Estos son los usuarios que has referido, en esta tabla puedes ver el progreso de cada
+            uno.</div>
+        <table class="ui striped table">
+            <thead>
+                <tr>
+                    <th id="referredEmail">E-mail</th>
+                    <th id="referredSignup">Fecha de alta</th>
+                    <th id="referredProgress">Progreso actual</th>
+                    <th id="referredActive">Activo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="referredUser" *ngFor='let referredUser of referredUsers'>
+                    <td id="email">{{ referredUser.email }}</td>
+                    <td id="signupDate">{{ getFormattedDate(referredUser.creationDate) }}</td>
+                    <td id="progressPerc">
+                        <sui-progress [value]="getPercentage(referredUser.profilesExtracted)" [showProgress]="true"
+                            class="indicating sm-font" [attr.title]="referredUser.profilesExtracted + '/' + activeReferredRequestsXMonth">
+                            {{ getFormattedProfilesNumber(referredUser.profilesExtracted) }} Perfiles navegados
+                        </sui-progress>
+                    </td>
+                    <td id="isActive" class="center aligned">
+                        <i *ngIf="referredUser.profilesExtracted <= 0" class="large red close icon" title="Este referido no está activo"></i>
+                        <i *ngIf="referredUser.profilesExtracted > 0 && referredUser.profilesExtracted < activeReferredRequestsXMonth"
+                            class="large yellow info icon" title="Este referido está en progreso de ser activo"></i>
+                        <i *ngIf="referredUser.profilesExtracted >=  activeReferredRequestsXMonth" class="large green checkmark icon"
+                            title="Este referido ya está activo"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="!isLoading && showErrorMessage" class="description">
+        <div class="ui section" style="color: red" [innerHtml]="errorMessage"></div>
+    </div>
+</div>
+<div class="actions">
+    <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
+</div>

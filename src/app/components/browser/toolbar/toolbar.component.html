@@ -1,0 +1,46 @@
+<div class="toolbar" *ngIf="extractor">
+    <div class="control-container daily-requests">
+        <span>Quiero navegar </span>
+        <div class="ui mini input">
+            <input type="number" [(ngModel)]="extractor.linkedInAccount.maxDailyProfiles" (change)="onDailyProfilesChanged()">
+        </div>
+        
+    </div>
+
+    <div class="control-container ui buttons">
+        <button class="negative ui icon button"
+            data-tooltip="Frenar navegación"
+            data-position="top center"
+            [class.disabled]="!(extractor.linkedInAccount.isLogged && extractor.isExtracting)"
+            [disabled]="!(extractor.linkedInAccount.isLogged && extractor.isExtracting)"
+            (click)="extractor.stopExtraction(false)"><i
+                class="stop icon"></i></button>
+        <button class="positive ui right labeled icon button"
+            data-tooltip="Comenzar a navegar perfiles"
+            data-position="top center"
+            [class.disabled]="!(extractor.linkedInAccount.isLogged && !extractor.isExtracting)"
+            [disabled]="!(extractor.linkedInAccount.isLogged && !extractor.isExtracting)"
+            (click)="extractor.extractProfiles()"><i
+                class="play icon"></i> Iniciar</button>
+    </div>
+
+    <div class="control-container">
+        <div class="ui relaxed horizontal divided list">
+            <div class="item">
+                <img class="ui image" src="assets/img/user-check.png">
+                <div class="content">
+                    <div class="header">{{extractor.linkedInAccount.okProfiles}}</div>
+                    Perfiles navegados OK
+                </div>
+            </div>
+            <div class="item">
+                <img class="ui image" src="assets/img/user-cross.png">
+                <div class="content">
+                    <div class="header">{{extractor.linkedInAccount.distanceErrors + extractor.linkedInAccount.unavailableProfiles +
+                        extractor.linkedInAccount.otherErrors}}</div>
+                    Errores <a id="boton-errores" (click)="openModal()">ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+.sidebar {
+    width: 18%;
+    height: 100%;
+    border-left: 1px solid #e2e2e2;
+    background: #f9f9f9;
+    float: right;
+    position: relative;
+    overflow: visible;
+    padding: 1%;
+    z-index: 10
+}
+
+.sidebar h1 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.sidebar ul li {
+    background: #f2f2f2;
+    padding: 5px;
+    margin: 0 0 5px
+}
+
+.sidebar .bottom{
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:10px;
+    text-align:center;
+    background:#f2f2f2;
+    border-top: 1px solid #e2e2e2;
+}
+
+.sidebar .updateMessage{
+    display:block;
+    font-size:11px;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #e2e2e2;
+    text-align:center;
+    background: whitesmoke;
+    line-height: 1.6em;
+}
+
+.sidebar .balanceTable{
+    font-size: .9em;
+}
+
+.sidebar .updateWarning{
+    font-size: 11px;
+    color:darkred;
+    display:block;
+    margin-bottom: 20px;
+    line-height: 1.4em;
+    text-align:center;
+}
+
+.sidebar .referralBox{
+    font-size:.7em;
+}
+
+.sidebar .ui.table{margin-top:.5em}

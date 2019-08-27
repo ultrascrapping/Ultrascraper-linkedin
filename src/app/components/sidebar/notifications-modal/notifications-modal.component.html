@@ -1,0 +1,22 @@
+<div class="header">
+    Notificaciones
+</div>
+<div class="scrolling content">
+    <div class="description">
+        <div *ngFor='let notification of modal.context.notifications' class="ui segment" [ngStyle]="{ 'display': !notification.read || showReadNotifications ? 'block' : 'none' }">
+            <h4 id="notificationDate" class="ui header">
+                {{ notification.startDate.toLocaleString('es-AR', { weekday: 'long', year: 'numeric',month:'long', day:
+                'numeric' }) }} a las {{ notification.startDate.toLocaleString('es-AR', { hour: '2-digit',
+                minute: '2-digit' }) }}</h4>
+            <p id="notificationContent" [innerHtml]="notification.message | safeHtml"></p>
+        </div>
+    </div>
+</div>
+<div class="actions">
+    <div class="ui toggle checkbox f-left">
+        <input type="checkbox" name="showUnread" (change)="showReadNotifications = !showReadNotifications">
+        <label>Mostrar leídas</label>
+    </div>
+    <div class="ui button positive" (click)="modal.approve(undefined)">Marcar todas como leídas</div>
+    <div class="ui button negative" (click)="modal.deny(undefined)">Cerrar</div>
+</div>

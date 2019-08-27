@@ -1,0 +1,27 @@
+.statusbar {
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    margin: 5px 0 0;
+    padding: 5px 10px;
+    border-top: 1px solid #e2e2e2;
+    font-size: 14px;
+    font-style: italic;
+    z-index: 50;    
+}
+
+.statusbar .status {
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.statusbar .perfil-actual {
+    float: right;
+    position: relative;
+    overflow: hidden;
+}

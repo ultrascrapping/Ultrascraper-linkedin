@@ -1,0 +1,55 @@
+<div class="sidebar">
+    <div class="ui menu basic icon buttons">
+        <button id="boton-notificaciones" class="ui button" data-tooltip="Notificaciones" data-position="bottom center"
+            (click)="openNotificationsModal()">
+            <i class="bell icon"></i>
+            <div *ngIf="unreadNotifications.length > 0" class="floating ui red label">{{ unreadNotifications.length }}</div>
+        </button>
+        <button id="boton-referidos" class="ui button" data-tooltip="Referidos" data-position="bottom center" (click)="openReferredUsersModal()">
+            <i class="users icon"></i>
+        </button>
+        <button id="boton-soporte" class="ui button" data-tooltip="Soporte" data-position="bottom center" (click)="openSupportModal()"><i
+                class="envelope outline icon"></i></button>
+        <button id="boton-cuenta" class="ui button" data-tooltip="Mi cuenta" data-position="bottom center" (click)="openMyAccountDataModal()"><i
+                class="user icon"></i></button>
+        <button id="boton-salir" class="ui button" data-tooltip="Cerrar sesión" data-position="bottom center" (click)="openLogoutModal()"><i
+                class="sign-out icon"></i></button>
+    </div>
+    <h1>Estadísticas</h1>
+    <small>Resumen de todas tus cuentas desde el último pago:</small>
+    <small class="updateMessage" *ngIf="usAccount && usAccount.lastUpdate">Última actualización de estadísticas: {{ usAccount.lastUpdate | date:'dd/MM/yyyy' }} a las {{ usAccount.lastUpdate | date:'h:mm:ss a' }}</small>
+    <table class="ui celled table balanceTable">
+        <tbody>
+            <tr class="positive">
+                <td>
+                    <i class="dollar icon"></i> Balance
+                </td>
+                <td id="currentBalance">{{ (usAccount ? usAccount.balance : 0) | currency }}</td>
+            </tr>
+            <tr class="positive">
+                <td>
+                    <i class="checkmark icon"></i> Perfiles navegados
+                </td>
+                <td id="navigatedProfiles">{{ (usAccount ? usAccount.completed : 0) }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <small class="updateWarning" *ngIf="usAccount && usAccount.lastUpdate">El balance y los perfiles navegados de la tabla superior se actualizan a más tardar cada 1 hora</small>
+
+    <div class="ui green segment referralBox">
+        <p>Tu tarifa actual es <strong>US{{ (usAccount ? usAccount.usdx1000 : 0) | currency }}</strong> cada <strong>1.000</strong> perfiles navegados.</p>
+        <p><strong>Invita a un amigo y aumenta tu tarifa</strong></p>
+        <div class="ui fluid action input">
+            <input id="referralsUrl" type="text" value="{{ usAccount?.referralLink }}">
+            <button class="ui primary icon button" (click)="copyReferralLinkToClipboard()">
+                <i class="copy icon"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="add-linkedin">
+            <button data-add-tab class="large primary ui labeled icon button" (click)="addTab()"><i class="plus icon"></i>Agregar cuenta</button>
+        </div>
+    </div>
+</div>

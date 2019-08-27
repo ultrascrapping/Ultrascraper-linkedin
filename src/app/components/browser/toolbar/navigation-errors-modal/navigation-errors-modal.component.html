@@ -1,0 +1,34 @@
+<div class="header">
+    Errores durante la navegación
+</div>
+<div class="scrolling content">
+    <div class="description">
+        <p>Estos son los errores detallados que han salido durante el día en la cuenta (pestaña) actual.</p>
+        <table class="ui celled table">
+            <thead>
+                <tr>
+                    <th>Tipo de error</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="negative">
+                    <td>Errores de distancia</td>
+                    <td>{{ modal.context.account.distanceErrors }}</td>
+                </tr>
+                <tr class="negative">
+                    <td>Perfiles no disponibles</td>
+                    <td>{{ modal.context.account.unavailableProfiles }}</td>
+                </tr>
+                <tr class="negative">
+                    <td>Otros errores</td>
+                    <td>{{ modal.context.account.otherErrors }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="actions">
+
+    <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
+</div>

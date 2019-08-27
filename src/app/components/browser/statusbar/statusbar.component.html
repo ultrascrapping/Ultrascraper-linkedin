@@ -1,0 +1,8 @@
+<div class="statusbar">
+  <div class="status">    
+    <span [hidden]=!showNextProfileTimer>Siguiente perfil en: {{nextProfileTime$ | async}} - </span>     
+    <span *ngIf="extractor.isWaitingForRequests">Se ha alcanzado el límite diario de perfiles. Esperando a nuevos perfiles - </span>
+    <span>Estado actual: </span> {{extractor.extractingStatusSubject$ |async}}
+  </div>  
+  <div class="perfil-actual"><i class="linkedin icon"></i> {{extractor.urlToExtract$ | async}}</div>      
+</div>

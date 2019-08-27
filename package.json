@@ -1,0 +1,42 @@
+{
+  "name": "Ultra",
+  "version": "1.9.17",
+  "homepage": "https://ultrascrapper.com",
+  "main": "electron/dist/main.js",
+  "author": {
+    "name": "Ultra",
+    "email": "soporte@ultrascrapper.com"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~7.2.0",
+    "@angular/common": "~7.2.0",
+    "@angular/compiler": "~7.2.0",
+    "@angular/core": "~7.2.0",
+    "@angular/forms": "~7.2.0",
+    "@angular/platform-browser": "~7.2.0",
+    "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/router": "~7.2.0",
+    "@aspnet/signalr": "^1.1.4",
+    "@types/mocha": "^5.2.5",
+    "@types/request": "^2.48.1",
+    "buffer": "^5.2.1",
+    "core-js": "^2.5.4",
+    "electron-updater": "^4.0.6",
+    "flatted": "^2.0.1",
+    "full-icu": "^1.2.1",
+    "intl": "^1.2.5",
+    "mssql": "^4.3.1",
+    "ng2-semantic-ui": "^0.9.7",
+    "ngx-electron": "^2.1.1",
+    "protractor-http-client": "^1.0.4",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "rxjs": "~6.3.3",
+    "semantic-ui": "^2.4.2",
+    "testrail-promise": "^0.1.19",
+    "tslib": "^1.9.0",
+    "wallet-address-validator": "^0.2.4",
+    "zone.js": "~0.8.26"
+  }
+}

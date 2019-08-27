@@ -1,0 +1,38 @@
+<div class="header">
+    Bienvenido a Ultra
+</div>
+<div class="scrolling content">
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div *ngIf="!isLoading" class="description">
+        <div class="ui segment">
+            <form class="ui form">
+                <div class="field">
+                    <label>Correo</label>
+                    <input id="email" type="email" name="email" placeholder="Correo" [(ngModel)]="userEmail" #email="ngModel"
+                        (change)="showErrorMessage = false" tabindex="0" required>
+                </div>
+                <div class="field">
+                    <label>Contraseña</label>
+                    <input id="password" type="password" name="password" placeholder="Contraseña" [(ngModel)]="userPassword"
+                        #password="ngModel" (change)="showErrorMessage = false" tabindex="0" required>
+                </div>
+                <div *ngIf="(email.invalid && (email.dirty || email.touched)) || (password.invalid && (password.dirty || password.touched))"
+                    style="color: red">
+                    <div *ngIf="(email.errors && email.errors.required) || (password.errors && password.errors.required)">
+                        Por favor ingrese el email y contraseña.
+                    </div>
+                </div>
+                <div *ngIf="showErrorMessage" style="color: red" [innerHtml]="errorMessage | safeHtml">
+                </div>
+                <div class="d-table w-100">
+                    <p class="d-table-cell">
+                        <a href="http://ultrascrapper.com/" tabindex="1" target="_blank">Registrarse</a>
+                    </p>
+                    <div class="d-table-cell t-align-right">
+                        <button class="ui green button" (click)="login()" tabindex="0" [disabled]="email.invalid || password.invalid">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

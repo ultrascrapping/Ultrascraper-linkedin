@@ -1,0 +1,29 @@
+.toolbar {
+    display: flex;
+    align-items: baseline;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    font-size: 14px;
+    padding: 10px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.toolbar .omni {
+    width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e2e2e2;
+}
+
+.toolbar .daily-requests .input{
+    width: 70px
+}
+
+.toolbar .control-container .disabled{
+    background:#666
+}
+
+.toolbar .control-container .right{
+    border-left:1px solid #999
+}

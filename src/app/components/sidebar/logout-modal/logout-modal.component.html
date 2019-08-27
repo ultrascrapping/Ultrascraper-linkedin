@@ -1,0 +1,15 @@
+<div class="header">
+    ¿Seguro que deseas salir?
+</div>
+<div class="content">
+    <p>Si cierras sesión en Ultra dejarás de navegar perfiles y generar dinero.</p>
+</div>
+<div class="actions">
+    <div class="ui negative button" (click)="modal.deny(undefined)">
+        No
+    </div>
+    <div class="ui positive right labeled icon button" (click)="logout()">
+        Si
+        <i class="checkmark icon"></i>
+    </div>
+</div>

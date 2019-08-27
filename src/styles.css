@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+
+.ui.modal {
+    top: 50%!important;
+    left: 25%!important;
+    width: 50%!important;
+}

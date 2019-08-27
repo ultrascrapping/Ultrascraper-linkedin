@@ -1,0 +1,15 @@
+<div class="header">
+  ¿Seguro que deseas cerrar la pestaña?
+</div>
+<div class="content">
+  <p>Ultra está extrayendo perfiles en este momento. Si cierras la pestaña se detendrá la extracción. ¿Estás seguro?</p>
+</div>
+<div class="actions">
+  <div class="ui negative button" (click)="modal.deny(undefined)">
+      No
+  </div>
+  <div class="ui positive right labeled icon button" (click)="modal.approve(undefined)">
+      Si
+      <i class="checkmark icon"></i>
+  </div>
+</div>
